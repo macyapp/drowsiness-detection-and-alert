@@ -1,4 +1,4 @@
-# drowsiness-detection-and-alert
+# Drowsiness Detection and Alert System
 Project for Product Development Lab by:
 
 119EI0277 - Suchismita Das<br>
