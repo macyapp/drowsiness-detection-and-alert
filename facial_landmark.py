@@ -39,14 +39,14 @@ ap.add_argument("-p", "--shape-predictor", required=True,
 ap.add_argument("-i", "--image", required=True,
 	help="path to input image")
 args = {
-	"shape_predictor":"shapePredictor/shape_predictor_68_face_landmarks.dat",
+	"shape_predictor":"models/shape_predictor_68_face_landmarks.dat",
 	"image":"assets/face_image.jpg"
 }
 
 """
 Change:
 args = {
-	"shape_predictor":"shapePredictor/shape_predictor_68_face_landmarks.dat",
+	"shape_predictor":"models/shape_predictor_68_face_landmarks.dat",
 	"image":"assets/face_image.jpg"
 }
 
