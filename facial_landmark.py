@@ -40,7 +40,7 @@ ap.add_argument("-i", "--image", required=True,
 	help="path to input image")
 args = {
 	"shape_predictor":"models/shape_predictor_68_face_landmarks.dat",
-	"image":"assets/face_image.jpg"
+	"image":"/home/sidhant/Projects/snap4.jpeg"
 }
 
 """
