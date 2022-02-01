@@ -40,7 +40,7 @@ ap.add_argument("-i", "--image", required=True,
 	help="path to input image")
 args = {
 	"shape_predictor":"models/shape_predictor_68_face_landmarks.dat",
-	"image":"/home/sidhant/Projects/snap4.jpeg"
+	"image":"/home/sidhant/Projects/mult_face.jpg"
 }
 
 """
@@ -89,8 +89,11 @@ for (i, rect) in enumerate(rects):
 	# and draw them on the image
 	for (x, y) in shape:
 		cv2.circle(image, (x, y), 1, (0, 0, 255), -1)
+	if cv2.waitKey(1) & 0xFF == ord('q'):
+		break
 # show the output image with the face detections + facial landmarks
 cv2.imshow("Output", image)
 cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
