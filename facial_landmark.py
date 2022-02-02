@@ -40,7 +40,7 @@ ap.add_argument("-i", "--image", required=True,
 	help="path to input image")
 args = {
 	"shape_predictor":"models/shape_predictor_68_face_landmarks.dat",
-	"image":"/home/sidhant/Projects/drowsiness-detection-and-alert/assets/01_doodle.png"
+	"image":"/home/sidhant/Projects/drowsiness-detection-and-alert/assets/02_face.jpg"
 }
 
 """
@@ -57,16 +57,16 @@ in order to get the location from the command line
 """
 
 # %%
-# initialize dlib's face detector (HOG-based) and then create
-# the facial landmark predictor
-detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor(args["shape_predictor"])
-
-# %%
 # load the input image, resize it, and convert it to grayscale
 image = cv2.imread(args["image"])
 image = imutils.resize(image, width=500)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# %%
+# initialize dlib's face detector (HOG-based) and then create
+# the facial landmark predictor
+detector = dlib.get_frontal_face_detector()
+predictor = dlib.shape_predictor(args["shape_predictor"])
 # detect faces in the grayscale image
 rects = detector(gray, 1)
 
@@ -89,10 +89,11 @@ for (i, rect) in enumerate(rects):
 	# and draw them on the image
 	for (x, y) in shape:
 		cv2.circle(image, (x, y), 1, (0, 0, 255), -1)
-	# Condition to close the output window on keypress
 	if cv2.waitKey(1) & 0xFF == ord('q'):
 		break
 # show the output image with the face detections + facial landmarks
 cv2.imshow("Output", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+
