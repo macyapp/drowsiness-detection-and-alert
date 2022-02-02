@@ -40,7 +40,7 @@ ap.add_argument("-i", "--image", required=True,
 	help="path to input image")
 args = {
 	"shape_predictor":"models/shape_predictor_68_face_landmarks.dat",
-	"image":"/home/sidhant/Projects/drowsiness-detection-and-alert/assets/sunglass.jpeg"
+	"image":"/home/sidhant/Projects/drowsiness-detection-and-alert/assets/01_.png"
 }
 
 """
@@ -89,6 +89,7 @@ for (i, rect) in enumerate(rects):
 	# and draw them on the image
 	for (x, y) in shape:
 		cv2.circle(image, (x, y), 1, (0, 0, 255), -1)
+	# Condition to close the output window on keypress
 	if cv2.waitKey(1) & 0xFF == ord('q'):
 		break
 # show the output image with the face detections + facial landmarks
