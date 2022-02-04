@@ -73,6 +73,8 @@ for (i, rect) in enumerate(rects):
 		# show the particular face part
 		cv2.imshow("ROI", roi)
 		cv2.imshow("Image", clone)
+		# Keypress function to move to next 
+		# face feature or to closing the open windows
 		if cv2.waitKey(1):
 			if 0xFF == ord('e'):
 				continue
