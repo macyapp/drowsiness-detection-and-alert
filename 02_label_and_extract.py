@@ -75,16 +75,14 @@ for (i, rect) in enumerate(rects):
 		cv2.imshow("Image", clone)
 		# Keypress function to move to next 
 		# face feature or to closing the open windows
-		if cv2.waitKey(1):
-			if 0xFF == ord('e'):
-				continue
-			if 0xFF == ord('q'):
-				continue
+		if cv2.waitKey(1) & 0xFF == ord('e'):
+			break
 		cv2.waitKey(0)
 	# visualize all facial landmarks with a transparent overlay
 	output = face_utils.visualize_facial_landmarks(image, shape)
 	cv2.imshow("Image", output)
 	cv2.waitKey(0)
 	cv2.destroyAllWindows()
+exit()
 
 
