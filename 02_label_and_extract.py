@@ -65,7 +65,7 @@ for (i, rect) in enumerate(rects):
 		# loop over the subset of facial landmarks, drawing the
 		# specific face part
 		for (x, y) in shape[i:j]:
-			cv2.circle(clone, (x, y), 1, (0, 0, 255), -1)
+			cv2.circle(clone, (x, y), 1, (0, 255, 0), -1)
 		# extract the ROI of the face region as a separate image
 		(x, y, w, h) = cv2.boundingRect(np.array([shape[i:j]]))
 		roi = image[y:y + h, x:x + w]
