@@ -54,7 +54,7 @@ while True:
 	# have a maximum width of 400 pixels, and convert it to
 	# grayscale
 	frame = vs.read()
-	frame = imutils.resize(frame, width=800)
+	frame = imutils.resize(frame, width=500)
 	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 	# detect faces in the grayscale frame
 	rects = detector(gray, 0)
