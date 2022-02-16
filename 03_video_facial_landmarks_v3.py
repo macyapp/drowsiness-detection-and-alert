@@ -58,7 +58,7 @@ while True:
 	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 	# detect faces in the grayscale frame
 	rects = detector(gray, 0)
-    	# loop over the face detections
+    # loop over the face detections
 	for rect in rects:
 		# determine the facial landmarks for the face region, then
 		# convert the facial landmark (x, y)-coordinates to a NumPy
