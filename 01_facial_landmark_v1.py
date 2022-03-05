@@ -89,7 +89,10 @@ for (i, rect) in enumerate(rects):
 	# and draw them on the image
 	for (x, y) in shape:
 		cv2.circle(image, (x, y), 1, (0, 0, 255), -1)
-	if cv2.waitKey(1) & 0xFF == ord('q'):
+	
+	key = cv2.waitKey(1) & 0xFF
+ 	# if the `q` key was pressed, break from the loop
+	if key == ord("q"):
 		break
 # show the output image with the face detections + facial landmarks
 cv2.imshow("Output", image)

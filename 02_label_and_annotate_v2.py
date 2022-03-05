@@ -73,9 +73,10 @@ for (i, rect) in enumerate(rects):
 		# show the particular face part
 		cv2.imshow("ROI", roi)
 		cv2.imshow("Image", clone)
-		# Keypress function to move to next 
-		# face feature or to closing the open windows
-		if cv2.waitKey(1) & 0xFF == ord('e'):
+		
+		key = cv2.waitKey(1) & 0xFF
+ 		# if the `q` key was pressed, break from the loop
+		if key == ord("q"):
 			break
 		cv2.waitKey(0)
 	# visualize all facial landmarks with a transparent overlay
